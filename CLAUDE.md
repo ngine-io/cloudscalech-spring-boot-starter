@@ -9,15 +9,15 @@ Java client and Spring Boot starter (libraries, not an app) for the cloudscale.c
 ## Commands
 
 ```sh
-mvn -B verify                                              # what CI runs: compile, test, source + javadoc jars
-mvn test                                                   # tests only
-mvn test -pl cloudscale-client -Dtest=CloudscaleClientTests               # single test class
-mvn test -pl cloudscale-client -Dtest=CloudscaleClientTests#serverActions # single test method
+./mvnw -B verify                                              # what CI runs: compile, test, source + javadoc jars
+./mvnw test                                                   # tests only
+./mvnw test -pl cloudscale-client -Dtest=CloudscaleClientTests               # single test class
+./mvnw test -pl cloudscale-client -Dtest=CloudscaleClientTests#serverActions # single test method
 ```
 
-The javadoc jar is built in the default lifecycle (not only on release), so broken javadoc can break `mvn verify`.
+The javadoc jar is built in the default lifecycle (not only on release), so broken javadoc can break `./mvnw verify`.
 
-Releases: pushing a `v*` tag triggers `.github/workflows/release.yml`, which sets the version of all modules from the tag and runs `mvn -P release deploy` (GPG signing + Maven Central). The `pom.xml` versions stay at `-SNAPSHOT`.
+Releases: pushing a `v*` tag triggers `.github/workflows/release.yml`, which sets the version of all modules from the tag and runs `./mvnw -P release deploy` (GPG signing + Maven Central). The `pom.xml` versions stay at `-SNAPSHOT`.
 
 ## Modules
 

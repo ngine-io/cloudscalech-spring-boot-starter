@@ -132,7 +132,7 @@ catch (CloudscaleApiException ex) {
 ## Building
 
 ```shell
-mvn -B verify
+./mvnw -B verify
 ```
 
 ## Releasing
